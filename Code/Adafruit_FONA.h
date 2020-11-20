@@ -176,6 +176,15 @@ class Adafruit_FONA : public FONAStreamType {
                               uint16_t *year = NULL, uint8_t *month = NULL, uint8_t *day = NULL, uint8_t *hour = NULL, uint8_t *min = NULL, float *sec = NULL);
   boolean enableGPSNMEA(uint8_t nmea);
 
+  // UDP raw Connections
+  boolean UDPconnect(char *server, uint16_t port);
+  boolean UDPclose(void);
+  boolean UDPconnected(void);
+  boolean UDPsend(String packet);
+  boolean UDPsend(char *packet, uint8_t len);
+  uint16_t UDPavailable(void);
+  uint16_t UDPread(uint8_t *buff, uint8_t len);
+
   // TCP raw connections
   boolean TCPconnect(char *server, uint16_t port);
   boolean TCPclose(void);
